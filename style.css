@@ -1,0 +1,205 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
+:root {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  color: #555;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #151b1d;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 20px;
+  cursor: pointer;
+  width: 100%;
+  z-index: 9;
+}
+header .logo {
+  z-index: 10;
+}
+header .logo img {
+  max-width: 178px;
+}
+@media screen and (max-width: 992px) {
+  header .logo img {
+    max-width: 102px;
+  }
+}
+header nav {
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 170px;
+  transition: all 0.3s ease-in-out;
+}
+header nav ul li {
+  transform: translateY(50px);
+  opacity: 0;
+}
+header nav ul li a {
+  display: block;
+  font-size: 5em;
+  text-decoration: none;
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+@media screen and (max-width: 992px) {
+  header nav ul li a {
+    font-size: 2.3em;
+  }
+}
+header nav ul li a:hover {
+  color: #E84A5F;
+}
+
+.toggle-btn {
+  z-index: 10;
+}
+.toggle-btn .bar {
+  width: 30px;
+  height: 2px;
+  margin: 7px auto;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+#toggle:checked ~ nav {
+  opacity: 1;
+  visibility: visible;
+}
+#toggle:checked ~ nav ul {
+  top: 120px;
+}
+#toggle:checked ~ nav ul li {
+  transform: translateY(0px);
+  opacity: 1;
+  padding-left: 20px;
+}
+#toggle:checked ~ nav ul li:nth-child(1) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.1s;
+}
+#toggle:checked ~ nav ul li:nth-child(2) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.2s;
+}
+#toggle:checked ~ nav ul li:nth-child(3) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.3s;
+}
+#toggle:checked ~ nav ul li:nth-child(4) {
+  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.4s;
+}
+#toggle:checked + label.toggle-btn .bar {
+  background-color: red;
+}
+#toggle:checked + label.toggle-btn .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+#toggle:checked + label.toggle-btn .bar:nth-child(2) {
+  transform: translateY(2px) rotate(-45deg);
+}
+
+.slideshow-container {
+  position: relative;
+}
+.slideshow-container .mySlides {
+  display: none;
+}
+.slideshow-container .mySlides img {
+  vertical-align: middle;
+  height: 100vh;
+  max-height: 800px;
+  object-fit: cover;
+}
+.slideshow-container .mySlides .text {
+  position: absolute;
+  text-align: left;
+  font-size: 5.625em;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 5.4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  opacity: 1;
+  top: 0;
+  left: 12%;
+  max-width: 900px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 992px) {
+  .slideshow-container .mySlides .text {
+    font-size: 3.3em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .slideshow-container .mySlides .text {
+    font-size: 2.3em;
+    align-items: unset;
+    top: 150px;
+    left: unset;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+.slideshow-container .mySlides.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.slideshow-container .arrow-btn-group {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 767px) {
+  .slideshow-container .arrow-btn-group {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
