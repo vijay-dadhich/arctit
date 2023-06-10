@@ -13,7 +13,7 @@
             <img src="./logo.png" alt="logo image">
         </div>
         <input type="checkbox" id="toggle" style="display:none;">
-        <label class="toggle-btn toggle-btn__cross" for="toggle">
+        <label class="toggle-btn toggle-btn__cross magic-hover" for="toggle">
 
             <div class="bar"></div>
             <div class="bar"></div>
@@ -57,6 +57,19 @@
         </div>
     </div>
     <script src="./script.js"></script>
+  <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1684982764/magicmouse-2.0.0.cdn.min.js"></script>
+
+    <script type="text/javascript">
+        options = {
+        "cursorOuter": "circle-basic",
+        "hoverEffect": "pointer-overlay",
+        "hoverItemMove": false,
+        "defaultCursor": false,
+        "outerWidth": 20,
+        "outerHeight": 20
+          };
+        magicMouse(options);
+    </script>
 </body>
 
 </html>
